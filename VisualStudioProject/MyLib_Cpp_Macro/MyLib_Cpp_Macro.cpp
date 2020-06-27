@@ -21,7 +21,31 @@ int main()
     ccoutln(parameterNum(?, ?, ?, ?, ?, ?, ?, ?));
     ccoutlnln(parameterNum(?, ?, ?, ?, ?, ?, ?, ?, ?));
 
-    std::cout << "Hello World!\n";
+
+    with(std::cout << "no print", << std::endl;) ln;
+
+    with(std::cout << , << std::endl;,
+        "1")
+    ln;
+
+    with(std::cout << , << std::endl; ,
+        "1",
+        "2")
+    ln;
+
+    with(std::cout << , << std::endl;,
+        "1",
+        "2",
+        "3")
+    ln;
+
+    with(std::cout <<, << std::endl;,
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6")
 }
 
 

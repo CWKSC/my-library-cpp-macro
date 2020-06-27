@@ -57,7 +57,7 @@
 #define ccoutln(...) std::cout << # __VA_ARGS__ " : " << __VA_ARGS__ << '\n'
 #define ccoutlnln(...) std::cout << # __VA_ARGS__ " : " << __VA_ARGS__ << "\n\n"
 
-#define IfExist(exp, ...) __VA_OPT__(exp)
+#define IfExist(statement, ...) __VA_OPT__(statement)
 
 #define with(start, end, ...) \
     IfExist(start get1th(__VA_ARGS__) end, get1th(__VA_ARGS__)) \
@@ -67,9 +67,9 @@
     IfExist(start get5th(__VA_ARGS__) end, get5th(__VA_ARGS__,,,,)) \
     IfExist(start get6th(__VA_ARGS__) end, get6th(__VA_ARGS__,,,,,)) \
     IfExist(start get7th(__VA_ARGS__) end, get7th(__VA_ARGS__,,,,,,)) \
-    IfExist(start get8th(__VA_ARGS__) end, get8th(__VA_ARGS__,,,,,,)) \
-    IfExist(start get9th(__VA_ARGS__) end, get9th(__VA_ARGS__,,,,,,)) \
-    IfExist(start get10th(__VA_ARGS__) end, get10th(__VA_ARGS__,,,,,,))
+    IfExist(start get8th(__VA_ARGS__) end, get8th(__VA_ARGS__,,,,,,,)) \
+    IfExist(start get9th(__VA_ARGS__) end, get9th(__VA_ARGS__,,,,,,,,)) \
+    IfExist(start get10th(__VA_ARGS__) end, get10th(__VA_ARGS__,,,,,,,,,))
 
 //#define with(start, end, m1, m2, m3) \
 //    start m1 end \

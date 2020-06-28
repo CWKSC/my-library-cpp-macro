@@ -13,6 +13,8 @@
 
 #define comma ,
 
+#define eatBrackets(...) __VA_ARGS__
+
 #define midLayer(...) __VA_ARGS__
 
 #define linkMacro_body(a, b) a ## b
@@ -59,7 +61,7 @@
 
 #define IfExist(statement, ...) __VA_OPT__(statement)
 
-#define with(start, end, ...) \
+#define with_body(start, end, ...) \
     IfExist(start get1th(__VA_ARGS__) end, get1th(__VA_ARGS__)) \
     IfExist(start get2th(__VA_ARGS__) end, get2th(__VA_ARGS__,)) \
     IfExist(start get3th(__VA_ARGS__) end, get3th(__VA_ARGS__,,)) \
@@ -71,7 +73,11 @@
     IfExist(start get9th(__VA_ARGS__) end, get9th(__VA_ARGS__,,,,,,,,)) \
     IfExist(start get10th(__VA_ARGS__) end, get10th(__VA_ARGS__,,,,,,,,,))
 
+#define with(start, end, ...) \
+    midLayer(with_body(start, end, __VA_ARGS__))
+
 //#define with(start, end, m1, m2, m3) \
 //    start m1 end \
 //    start m2 end \
 //    start m3 end
+

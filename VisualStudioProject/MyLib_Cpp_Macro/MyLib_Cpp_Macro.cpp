@@ -8,7 +8,8 @@ int main()
 
     ccoutln(select0_2("args0", "args1", "args2"));
     ccoutln(select0_2("args0", "args1", "args2", ?));
-    ccoutlnln(select0_2("args0", "args1", "args2", ?, ?));
+    ccoutlnln(select0_2("args0", "args1", "args2", ? , ? ));
+    
 
     ccoutln(parameterNum());
     ccoutln(parameterNum(?));
@@ -21,8 +22,21 @@ int main()
     ccoutln(parameterNum(?, ?, ?, ?, ?, ?, ?, ?));
     ccoutlnln(parameterNum(?, ?, ?, ?, ?, ?, ?, ?, ?));
 
+    with(std::cout << parameterNum, << std::endl;,
+        (),
+        (?),
+        (?, ?),
+        (?, ?, ?),
+        (?, ?, ?, ?),
+        (?, ?, ?, ?, ?),
+        (?, ?, ?, ?, ?, ?),
+        (?, ?, ?, ?, ?, ?, ?),
+        (?, ?, ?, ?, ?, ?, ?, ?),
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    );
 
-    with(std::cout << "no print", << std::endl;) ln;
+
+    with(std::cout << "It will not print anything", << std::endl;) ln;
 
     with(std::cout << , << std::endl;,
         "1")
@@ -38,6 +52,7 @@ int main()
         "2",
         "3")
     ln;
+    // Expend to: //
     // std::cout << "1" << std::endl;
     // std::cout << "2" << std::endl;
     // std::cout << "3" << std::endl;
@@ -48,7 +63,12 @@ int main()
         "3",
         "4",
         "5",
-        "6")
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11") // the expend max is 10, so "11" will not show and no expend when compile
 }
 
 

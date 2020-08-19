@@ -34,7 +34,7 @@
 #define get9th(a1, a2, a3, a4, a5, a6, a7, a8, a9, ...) a9
 #define get10th(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, ...) a10
 
-#define parameterNum(...) get10th( __VA_ARGS__ __VA_OPT__(,) 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define parameterNum(...) select0_9(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, __VA_ARGS__)
 
 #define select0_1(m0, m1, ...) get2th( __VA_ARGS__ __VA_OPT__(,) m1, m0 )
 #define select0_2(m0, m1, m2, ...) get3th( __VA_ARGS__ __VA_OPT__(,) m2, m1, m0 )
@@ -44,6 +44,7 @@
 #define select0_6(m0, m1, m2, m3, m4, m5, m6, ...) get7th( __VA_ARGS__ __VA_OPT__(,) m6, m5, m4, m3, m2, m1, m0 )
 #define select0_7(m0, m1, m2, m3, m4, m5, m6, m7, ...) get8th( __VA_ARGS__ __VA_OPT__(,) m7, m6, m5, m4, m3, m2, m1, m0 )
 #define select0_8(m0, m1, m2, m3, m4, m5, m6, m7, m8, ...) get9th( __VA_ARGS__ __VA_OPT__(,) m8, m7, m6, m5, m4, m3, m2, m1, m0 )
+#define select0_9(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, ...) get10th( __VA_ARGS__ __VA_OPT__(,) m9, m8, m7, m6, m5, m4, m3, m2, m1, m0 )
 
 #define ifTrue(condition, expersion) \
     condition && expersion

@@ -25,7 +25,7 @@ int main()
 {
     ccoutln(select0_1("args0", "args1"));
     // Expend to:
-    // ccoutln(select0_1("args0", "args1"));
+    // -> ccoutln(select0_1("args0", "args1"));
     // * #define ccoutln(...) std::cout << # __VA_ARGS__ " : " << __VA_ARGS__ << '\n'
     // __VA_ARGS__ = select0_1("args0", "args1")
     // -> std::cout << # __VA_ARGS__ " : " << __VA_ARGS__ << '\n';
